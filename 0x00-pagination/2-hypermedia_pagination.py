@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Hypermedia pagination"""
 
+
 import csv
 from typing import List
 import math
