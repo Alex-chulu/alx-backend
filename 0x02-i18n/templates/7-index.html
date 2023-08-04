@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ get_locale() }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans %}N Queens Puzzle{% endtrans %}</title>
+</head>
+<body>
+    {% if g.user %}
+    <p>{% trans %}You are logged in as {{ g.user.name }}.{% endtrans %}</p>
+    {% else %}
+    <p>{% trans %}You are not logged in.{% endtrans %}</p>
+    {% endif %}
+</body>
+</html>
+
