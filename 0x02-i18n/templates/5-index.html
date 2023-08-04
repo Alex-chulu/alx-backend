@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% trans %}Welcome to Holberton{% endtrans %}</title>
+</head>
+<body>
+    {% if g.user %}
+        <p>{% trans "You are logged in as %(username)s." username=g.user["name"] %}</p>
+    {% else %}
+        <p>{% trans "You are not logged in." %}</p>
+    {% endif %}
+</body>
+</html>
+
