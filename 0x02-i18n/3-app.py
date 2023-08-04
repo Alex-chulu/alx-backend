@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Flask app with Babel configuration and language selection"""
+"""Flask app with Babel configuration, language selection, and translations"""
 
 from flask import Flask, render_template, request
 from flask_babel import Babel, gettext
@@ -22,8 +22,10 @@ def get_locale():
 
 @app.route('/')
 def index():
-    """Render the index.html template."""
-    return render_template('2-index.html')
+    """Render the index.html template with translated messages."""
+    return render_template('3-index.html',
+                           home_title=gettext("Welcome to Holberton"),
+                           home_header=gettext("Hello world!"))
 
 if __name__ == '__main__':
     app.run()
