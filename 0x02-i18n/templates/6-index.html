@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ get_locale() }}">
 <head>
-    <title>{% trans %}Welcome to Holberton{% endtrans %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans %}N Queens Puzzle{% endtrans %}</title>
 </head>
 <body>
-    {% if g.user %}
-        <p>{% trans "You are logged in as %(username)s." username=g.user["name"] %}</p>
-    {% else %}
-        <p>{% trans "You are not logged in." %}</p>
+    <h1>{% trans %}N Queens Puzzle{% endtrans %}</h1>
+    <form action="/" method="GET">
+        <label for="n">Enter N:</label>
+        <input type="number" name="n" id="n" min="4" required>
+        <input type="submit" value="Solve">
+    </form>
+    {% if solutions %}
+    <h2>{% trans %}Solutions{% endtrans %}</h2>
+    <ul>
+        {% for solution in solutions %}
+        <li>{{ solution }}</li>
+        {% endfor %}
+    </ul>
     {% endif %}
 </body>
 </html>
