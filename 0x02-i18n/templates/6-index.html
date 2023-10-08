@@ -1,25 +1,17 @@
 <!DOCTYPE html>
-<html lang="{{ get_locale() }}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% trans %}N Queens Puzzle{% endtrans %}</title>
-</head>
-<body>
-    <h1>{% trans %}N Queens Puzzle{% endtrans %}</h1>
-    <form action="/" method="GET">
-        <label for="n">Enter N:</label>
-        <input type="number" name="n" id="n" min="4" required>
-        <input type="submit" value="Solve">
-    </form>
-    {% if solutions %}
-    <h2>{% trans %}Solutions{% endtrans %}</h2>
-    <ul>
-        {% for solution in solutions %}
-        <li>{{ solution }}</li>
-        {% endfor %}
-    </ul>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ _('home_title') }}</title>
+  </head>
+  <body>
+    <h1>{{ _('home_header') }}</h1>
+    {% if u.user %}
+    <p>{{ _('logged_in_as', username=u.user.get('name', '')) }}</p>
+    {% else %}
+    <p>{{ _('not_logged_in') }}</p>
     {% endif %}
-</body>
+  </body>
 </html>
-
